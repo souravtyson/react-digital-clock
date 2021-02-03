@@ -47,9 +47,17 @@ export default function App() {
 
   const showButton = () => {
     if (isStarted) {
-      return <button onClick={stopClock}>Stop</button>;
+      return (
+        <button className="buttonStyle" onClick={stopClock}>
+          Stop
+        </button>
+      );
     } else {
-      return <button onClick={startClock}>Started</button>;
+      return (
+        <button className="buttonStyle" onClick={startClock}>
+          Start
+        </button>
+      );
     }
   };
 
@@ -72,11 +80,12 @@ export default function App() {
 
   return (
     <div id="clock">
-      <p class="date"></p>
-      <p class="time">
+      <p className="text">DIGITAL CLOCK with React.js</p>
+      <p className="date" />
+      <p className="time">
         {hours}:{minutes}:{seconds} {formatAMPM}
       </p>
-      <p class="text">DIGITAL CLOCK with React.js</p>
+      <div className="alocate">{showButton()}</div>
     </div>
   );
 }
